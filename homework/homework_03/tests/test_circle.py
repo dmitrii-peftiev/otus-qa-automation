@@ -1,6 +1,6 @@
 import pytest
-from src.circle import Circle
-from src.triangle import Triangle
+from homework.homework_02.src.circle import Circle
+from homework.homework_02.src.triangle import Triangle
 
 
 @pytest.mark.parametrize(
