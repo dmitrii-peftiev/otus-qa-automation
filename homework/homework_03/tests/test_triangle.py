@@ -2,6 +2,8 @@ import pytest
 from homework.homework_02.src.triangle import Triangle
 from homework.homework_02.src.rectangle import Rectangle
 
+pytestmark = pytest.mark.homework_03
+
 
 @pytest.mark.parametrize(
     "side_a, side_b, side_c, perimeter",

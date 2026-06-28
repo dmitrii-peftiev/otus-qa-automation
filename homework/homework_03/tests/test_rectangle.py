@@ -2,6 +2,8 @@ import pytest
 from homework.homework_02.src.rectangle import Rectangle
 from homework.homework_02.src.square import Square
 
+pytestmark = pytest.mark.homework_03
+
 
 @pytest.mark.parametrize(
     "side_a, side_b, perimeter",
