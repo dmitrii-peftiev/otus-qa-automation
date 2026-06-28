@@ -8,3 +8,4 @@
 * `homework/homework_02/` — **ДЗ №2**: [ООП на практике](https://github.com/OtusTeam/QA-Python/blob/master/oop/hw.md).
 * `homework/homework_03/` — **ДЗ №3**: [Покрыть тестами код из ДЗ "ООП на практике"](https://github.com/OtusTeam/QA-Python/blob/master/pytest/hw.md).
 * `homework/homework_04/` — **ДЗ №4**: [Работа с тестовыми данными](https://github.com/OtusTeam/QA-Python/blob/master/test-data/hw.md).
+* `homework/homework_05/` — **ДЗ №5**: [Тестирование API](https://github.com/OtusTeam/QA-Python/blob/master/api/hw.md).
