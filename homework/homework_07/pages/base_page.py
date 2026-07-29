@@ -1,0 +1,30 @@
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+
+class BasePage:
+    def __init__(self, browser):
+        self.browser = browser
+        self.base_url = browser.base_url
+
+    def open(self, path=""):
+        self.browser.get(f"{self.base_url}{path}")
+
+    def find_element(self, locator, time=10):
+        return WebDriverWait(self.browser, time).until(
+            EC.presence_of_element_located(locator),
+            message=f"Element not found by locator: {locator}",
+        )
+
+    def find_elements(self, locator, time=10):
+        return WebDriverWait(self.browser, time).until(
+            EC.presence_of_all_elements_located(locator),
+            message=f"Elements not found by locator: {locator}",
+        )
+
+    def click(self, locator, time=10):
+        element = WebDriverWait(self.browser, time).until(
+            EC.element_to_be_clickable(locator),
+            message=f"Element {locator} is not clickable",
+        )
+        element.click()
