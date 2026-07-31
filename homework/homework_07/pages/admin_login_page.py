@@ -14,10 +14,17 @@ class AdminLoginPage(BasePage):
     HEADER_LOGOUT = (By.ID, "header_logout")
 
     def login(self, email, password):
-        self.find_element(AdminLoginPage.EMAIL).send_keys(email)
-        self.find_element(AdminLoginPage.PASSWD).send_keys(password)
-        self.click(AdminLoginPage.SUBMIT_LOGIN)
+        self.find_element(self.EMAIL).send_keys(email)
+        self.find_element(self.PASSWD).send_keys(password)
+        self.click(self.SUBMIT_LOGIN)
 
     def logout(self):
-        self.click(AdminLoginPage.EMPLOYEE_INFOS)
-        self.click(AdminLoginPage.HEADER_LOGOUT)
+        self.click(self.EMPLOYEE_INFOS)
+        self.click(self.HEADER_LOGOUT)
+
+    def is_opened(self):
+        assert self.find_element(self.EMAIL)
+        assert self.find_element(self.SUBMIT_LOGIN)
+
+    def dashboard_is_opened(self):
+        assert self.find_element(self.NAV_SIDEBAR)

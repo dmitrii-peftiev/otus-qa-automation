@@ -14,8 +14,14 @@ class CatalogPage(BasePage):
     USD_LINK = (By.LINK_TEXT, "USD $")
 
     def get_first_product_price(self):
-        return self.find_element(CatalogPage.PRICE).text
+        return self.find_element(self.PRICE).text
 
     def switch_currency_to_usd(self):
-        self.click(CatalogPage.CURRENCY_BUTTON)
-        self.click(CatalogPage.USD_LINK)
+        self.click(self.CURRENCY_BUTTON)
+        self.click(self.USD_LINK)
+
+    def is_opened(self):
+        assert self.find_element(self.SEARCH_WIDGET)
+        assert self.find_element(self.LEFT_COLUMN)
+        assert self.find_element(self.MAIN)
+        assert self.find_element(self.FOOTER)

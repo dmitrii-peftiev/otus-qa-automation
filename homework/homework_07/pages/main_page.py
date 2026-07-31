@@ -16,13 +16,18 @@ class MainPage(BasePage):
     USD_LINK = (By.LINK_TEXT, "USD $")
 
     def click_random_product(self):
-        products = self.find_elements(MainPage.PRODUCTS)
+        products = self.find_elements(self.PRODUCTS)
         random_product = random.choice(products)
         random_product.click()
 
     def get_first_product_price(self):
-        return self.find_element(MainPage.PRICE).text
+        return self.find_element(self.PRICE).text
 
     def switch_currency_to_usd(self):
-        self.click(MainPage.CURRENCY_BUTTON)
-        self.click(MainPage.USD_LINK)
+        self.click(self.CURRENCY_BUTTON)
+        self.click(self.USD_LINK)
+
+    def is_opened(self):
+        assert self.find_element(self.DESKTOP_LOGO)
+        assert self.find_element(self.CAROUSEL)
+        assert self.find_element(self.FOOTER)

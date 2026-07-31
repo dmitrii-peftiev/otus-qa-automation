@@ -15,10 +15,10 @@ def test_admin_login_logout(browser):
     page.open("/administration")
 
     page.login(ADMIN_EMAIL, ADMIN_PASSWORD)
-    assert page.find_element(AdminLoginPage.NAV_SIDEBAR)
+    page.dashboard_is_opened()
 
     page.logout()
-    assert page.find_element(AdminLoginPage.EMAIL)
+    page.is_opened()
 
 
 def test_add_random_product_to_cart(browser):
@@ -29,8 +29,7 @@ def test_add_random_product_to_cart(browser):
 
     product_page = ProductPage(browser)
     product_page.add_to_cart()
-
-    assert product_page.find_element(ProductPage.CART_MODAL)
+    product_page.cart_is_visible()
 
 
 def test_currency_switch_on_main_page(browser):

@@ -13,4 +13,11 @@ class ProductPage(BasePage):
     CART_MODAL = (By.ID, "blockcart-modal")
 
     def add_to_cart(self):
-        self.click(ProductPage.ADD_TO_CART_BUTTON)
+        self.click(self.ADD_TO_CART_BUTTON)
+
+    def is_opened(self):
+        assert self.find_element(self.PRODUCT_DESCRIPTION_SHORT_1)
+        assert self.find_element(self.ADD_TO_CART_BUTTON)
+
+    def cart_is_visible(self):
+        assert self.find_element(self.CART_MODAL)

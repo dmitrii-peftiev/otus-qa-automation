@@ -12,14 +12,14 @@ class BasePage:
 
     def find_element(self, locator, time=10):
         return WebDriverWait(self.browser, time).until(
-            EC.presence_of_element_located(locator),
-            message=f"Element not found by locator: {locator}",
+            EC.visibility_of_element_located(locator),
+            message=f"Element is not visible by locator: {locator}",
         )
 
     def find_elements(self, locator, time=10):
         return WebDriverWait(self.browser, time).until(
-            EC.presence_of_all_elements_located(locator),
-            message=f"Elements not found by locator: {locator}",
+            EC.visibility_of_all_elements_located(locator),
+            message=f"Elements are not visible by locator: {locator}",
         )
 
     def click(self, locator, time=10):
