@@ -1,4 +1,5 @@
 import pytest
+
 from homework.homework_05.tests.api_client import APIClient
 
 pytestmark = pytest.mark.homework_05_all

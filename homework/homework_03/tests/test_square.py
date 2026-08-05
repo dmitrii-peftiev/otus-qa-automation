@@ -1,6 +1,7 @@
 import pytest
-from homework.homework_02.src.square import Square
+
 from homework.homework_02.src.circle import Circle
+from homework.homework_02.src.square import Square
 
 pytestmark = pytest.mark.homework_03
 
