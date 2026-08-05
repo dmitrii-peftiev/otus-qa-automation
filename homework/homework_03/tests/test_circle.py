@@ -1,4 +1,5 @@
 import pytest
+
 from homework.homework_02.src.circle import Circle
 from homework.homework_02.src.triangle import Triangle
 

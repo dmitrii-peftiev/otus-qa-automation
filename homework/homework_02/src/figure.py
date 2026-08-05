@@ -14,7 +14,7 @@ class Figure(ABC):
 
     def add_area(self, figure: "Figure") -> int | float:
         if not isinstance(figure, Figure):
-            raise ValueError(
+            raise TypeError(
                 f"Argument figure must be Figure or child class, current {type(figure).__name__}"
             )
         return self.area + figure.area

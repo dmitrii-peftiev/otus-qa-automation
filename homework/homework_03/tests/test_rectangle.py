@@ -1,4 +1,5 @@
 import pytest
+
 from homework.homework_02.src.rectangle import Rectangle
 from homework.homework_02.src.square import Square
 

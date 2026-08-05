@@ -1,6 +1,7 @@
 import pytest
-from homework.homework_02.src.triangle import Triangle
+
 from homework.homework_02.src.rectangle import Rectangle
+from homework.homework_02.src.triangle import Triangle
 
 pytestmark = pytest.mark.homework_03
 

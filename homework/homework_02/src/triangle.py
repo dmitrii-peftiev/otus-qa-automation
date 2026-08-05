@@ -1,9 +1,10 @@
 import math
+
 from homework.homework_02.src.figure import Figure
 
 
 class Triangle(Figure):
-    def __init__(self, side_a: int | float, side_b: int | float, side_c: int | float):
+    def __init__(self, side_a: float, side_b: float, side_c: float):
         if side_a <= 0 or side_b <= 0 or side_c <= 0:
             raise ValueError(
                 f"Triangle sides must be above zero, current is side_a={side_a} and side_b={side_b} and side_c={side_c}"

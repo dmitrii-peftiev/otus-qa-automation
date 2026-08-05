@@ -1,8 +1,9 @@
 import pytest
-from homework.homework_07.pages.main_page import MainPage
-from homework.homework_07.pages.catalog_page import CatalogPage
-from homework.homework_07.pages.product_page import ProductPage
+
 from homework.homework_07.pages.admin_login_page import AdminLoginPage
+from homework.homework_07.pages.catalog_page import CatalogPage
+from homework.homework_07.pages.main_page import MainPage
+from homework.homework_07.pages.product_page import ProductPage
 from homework.homework_07.pages.registration_page import RegistrationPage
 
 pytestmark = pytest.mark.homework_07

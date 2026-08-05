@@ -1,9 +1,10 @@
 import math
+
 from homework.homework_02.src.figure import Figure
 
 
 class Circle(Figure):
-    def __init__(self, radius: int | float):
+    def __init__(self, radius: float):
         if radius <= 0:
             raise ValueError(
                 f"Circle radius must be above zero, current is radius={radius}"
