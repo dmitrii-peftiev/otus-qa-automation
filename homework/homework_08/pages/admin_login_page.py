@@ -18,20 +18,15 @@ class AdminLoginPage(BasePage):
     @allure.step("Login as admin user: {email}")
     def login(self, email, password):
         self.logger.info(f"Login with email: {email}")
-        with allure.step(f"Type email: {email}"):
-            self.find_element(self.EMAIL).send_keys(email)
-        with allure.step("Type password"):
-            self.find_element(self.PASSWD).send_keys(password)
-        with allure.step("Click login button"):
-            self.click(self.SUBMIT_LOGIN)
+        self.find_element(self.EMAIL).send_keys(email)
+        self.find_element(self.PASSWD).send_keys(password)
+        self.click(self.SUBMIT_LOGIN)
 
     @allure.step("Logout from admin panel")
     def logout(self):
         self.logger.info("Logout from admin panel")
-        with allure.step("Open profile menu"):
-            self.click(self.EMPLOYEE_INFOS)
-        with allure.step("Click logout button"):
-            self.click(self.HEADER_LOGOUT)
+        self.click(self.EMPLOYEE_INFOS)
+        self.click(self.HEADER_LOGOUT)
 
     @allure.step("Check that login page is open")
     def is_opened(self):

@@ -33,10 +33,8 @@ class MainPage(BasePage):
     @allure.step("Switch currency to USD")
     def switch_currency_to_usd(self):
         self.logger.info("Switching currency to USD")
-        with allure.step("Open currency list"):
-            self.click(self.CURRENCY_BUTTON)
-        with allure.step("Select USD currency"):
-            self.click(self.USD_LINK)
+        self.click(self.CURRENCY_BUTTON)
+        self.click(self.USD_LINK)
 
     @allure.step("Check that main page is open")
     def is_opened(self):
