@@ -35,7 +35,7 @@ def pytest_runtest_makereport(item, call):
 
     if report.when == "call" and report.failed and "browser" in item.fixturenames:
         driver = item.funcargs["browser"]
-        with suppress(Exception):
+        with suppress(Exception), allure.step("Save screenshot on failure"):
             allure.attach(
                 driver.get_screenshot_as_png(),
                 name="screenshot_on_failure",
