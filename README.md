@@ -9,6 +9,6 @@
 * `homework/homework_03/` — **ДЗ №3**: [Покрыть тестами код из ДЗ "ООП на практике"](https://github.com/OtusTeam/QA-Python/blob/master/pytest/hw.md).
 * `homework/homework_04/` — **ДЗ №4**: [Работа с тестовыми данными](https://github.com/OtusTeam/QA-Python/blob/master/test-data/hw.md).
 * `homework/homework_05/` — **ДЗ №5**: [Тестирование API](https://github.com/OtusTeam/QA-Python/blob/master/api/hw.md).
-* `homework/homework_06/` — **ДЗ №6**: [Ожидания элементов](https://github.com/OtusTeam/QA-Python/blob/master/selenium/hw.md).
-* `homework/homework_07/` — **ДЗ №7**: [Паттерн PageObject](https://github.com/OtusTeam/QA-Python/blob/master/pageobject/hw.md).
-* `homework/homework_08/` — **ДЗ №8**: [Отчёты Allure](https://github.com/OtusTeam/QA-Python/blob/master/reporting/hw.md).
+* `homework/homework_06/` — **ДЗ №6**: [Написание простых автотестов и основы Selenium](https://github.com/OtusTeam/QA-Python/blob/master/selenium/hw.md).
+* `homework/homework_07/` — **ДЗ №7**: [PageObject](https://github.com/OtusTeam/QA-Python/blob/master/pageobject/hw.md).
+* `homework/homework_08/` — **ДЗ №8**: [Логирование и отчетность](https://github.com/OtusTeam/QA-Python/blob/master/reporting/hw.md).
