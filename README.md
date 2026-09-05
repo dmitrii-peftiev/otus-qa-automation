@@ -65,6 +65,10 @@ docker pull selenoid/chrome:128.0
 ```
 
 ```shell
+docker pull selenoid/firefox:125.0
+```
+
+```shell
 docker compose -f docker-compose-selenoid.yaml up -d
 ```
 
