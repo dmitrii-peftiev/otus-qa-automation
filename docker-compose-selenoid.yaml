@@ -136,7 +136,7 @@ services:
         condition: service_started
     networks:
       - prestashop_network
-    command: pytest homework/homework_10/tests/ -m homework_10 --base-url http://prestashop --browser chrome --browser_version 128.0 --executor selenoid
+    command: homework/homework_10/tests/ -m homework_10 --base-url http://prestashop --browser chrome --browser_version 128.0 --executor selenoid
 
 volumes:
   db_data:

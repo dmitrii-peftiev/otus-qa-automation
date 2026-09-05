@@ -9,7 +9,7 @@ def pytest_addoption(parser):
     parser.addoption("--browser", default="chrome")
     parser.addoption("--base-url", default="http://localhost:8081")
     parser.addoption("--executor", default="local")
-    parser.addoption("--browser_version", default="120.0")
+    parser.addoption("--browser_version", default="128.0")
 
 
 @pytest.fixture
