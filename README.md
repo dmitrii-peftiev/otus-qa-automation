@@ -14,7 +14,7 @@
 * `homework/homework_08/` — **ДЗ №8**: [Логирование и отчетность](https://github.com/OtusTeam/QA-Python/blob/master/reporting/hw.md).
 * `Dockerfile` — **ДЗ №9**: [Написать Dockerfile для своего проекта](https://github.com/OtusTeam/QA-Python/blob/master/docker/hw.md).
 * `homework/homework_10/` + `browsers.json` + `docker-compose-selenoid.yaml` — **ДЗ №10**: [Написать docker-compose.yml файл для своего проекта](https://github.com/OtusTeam/QA-Python/blob/master/docker-compose/hw.md).
-* `browsers.json` — **ДЗ №11**: [Selenoid](https://github.com/OtusTeam/QA-Python/blob/master/selenoid/hw.md).
+* `browsers.json` + `docker-compose-selenoid.yaml` — **ДЗ №11**: [Selenoid](https://github.com/OtusTeam/QA-Python/blob/master/selenoid/hw.md).
 
 ## Инфраструктура PrestaShop (http://localhost:8081/) — ДЗ №6-9
 
@@ -65,11 +65,15 @@ docker pull selenoid/chrome:128.0
 ```
 
 ```shell
-docker compose -f docker-compose-selenoid.yaml up --build
+docker compose -f docker-compose-selenoid.yaml up -d
 ```
 
 ```shell
-docker compose -f docker-compose-selenoid.yaml run --rm tests homework/homework_10/tests/ -m homework_10 --base-url http://prestashop --browser firefox --browser_version 125.0 --executor selenoid
+docker compose -f docker-compose-selenoid.yaml up --build tests_chrome
+```
+
+```shell
+docker compose -f docker-compose-selenoid.yaml up --build tests_firefox
 ```
 
 ```shell

@@ -126,9 +126,9 @@ services:
       - 1.1.1.1
     command: -container-network=selenoid
 
-  tests:
+  tests_chrome:
     build: .
-    container_name: prestashop_tests
+    container_name: prestashop_tests_chrome
     depends_on:
       prestashop:
         condition: service_healthy
@@ -137,6 +137,18 @@ services:
     networks:
       - prestashop_network
     command: homework/homework_10/tests/ -m homework_10 --base-url http://prestashop --browser chrome --browser_version 128.0 --executor selenoid
+
+  tests_firefox:
+    build: .
+    container_name: prestashop_tests_firefox
+    depends_on:
+      prestashop:
+        condition: service_healthy
+      selenoid:
+        condition: service_started
+    networks:
+      - prestashop_network
+    command: homework/homework_10/tests/ -m homework_10 --base-url http://prestashop --browser firefox --browser_version 125.0 --executor selenoid
 
 volumes:
   db_data:
