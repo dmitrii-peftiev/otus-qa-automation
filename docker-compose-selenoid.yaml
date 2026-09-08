@@ -16,9 +16,6 @@ services:
         condition: service_healthy
     networks:
       - prestashop_network
-    dns:
-      - 8.8.8.8
-      - 1.1.1.1
 
   db:
     image: mysql:5.7
@@ -37,9 +34,6 @@ services:
       - db_data:/var/lib/mysql
     networks:
       - prestashop_network
-    dns:
-      - 8.8.8.8
-      - 1.1.1.1
 
   prestashop:
     image: prestashop/prestashop:8.1.5
@@ -75,9 +69,6 @@ services:
       start_period: 30s
     networks:
       - prestashop_network
-    dns:
-      - 8.8.8.8
-      - 1.1.1.1
 
   prestashop_postinstall:
     image: alpine:3.19
@@ -104,16 +95,11 @@ services:
         rm -rf /var/www/html/var/cache/* || true;
         echo "Done."
       '
-    dns:
-      - 8.8.8.8
-      - 1.1.1.1
 
   selenoid:
     image: aerokube/selenoid:latest-release
     container_name: selenoid
     hostname: selenoid
-    ports:
-      - "4444:4444"
     environment:
       - DOCKER_API_VERSION=1.40
     volumes:
@@ -121,10 +107,52 @@ services:
       - "./browsers.json:/etc/selenoid/browsers.json:ro"
     networks:
       - prestashop_network
-    dns:
-      - 8.8.8.8
-      - 1.1.1.1
     command: -container-network=selenoid
+
+  ggr:
+    image: aerokube/ggr:latest-release
+    container_name: ggr
+    volumes:
+      - "./quota:/etc/grid-router/quota:ro"
+    networks:
+      - prestashop_network
+    depends_on:
+      - selenoid
+    command: [ "-guests-allowed", "-guests-quota", "test", "-quotaDir", "/etc/grid-router/quota" ]
+
+  ggr-ui:
+    image: aerokube/ggr-ui:latest-release
+    container_name: ggr_ui
+    volumes:
+      - "./quota:/etc/grid-router/quota:ro"
+    networks:
+      - prestashop_network
+    depends_on:
+      - ggr
+
+  selenoid-ui:
+    image: aerokube/selenoid-ui:latest-release
+    container_name: selenoid_ui
+    command: [ "--ggr", "--status-url", "http://ggr-ui:8888", "--webdriver-url", "http://router:4444" ]
+    networks:
+      - prestashop_network
+    depends_on:
+      - ggr-ui
+
+  router:
+    image: nginx:alpine
+    container_name: router
+    ports:
+      - "4444:4444"
+    volumes:
+      - "./nginx.conf:/etc/nginx/nginx.conf:ro"
+    networks:
+      prestashop_network:
+        aliases:
+          - router
+    depends_on:
+      - selenoid-ui
+      - ggr
 
   tests_chrome:
     build: .
@@ -132,11 +160,11 @@ services:
     depends_on:
       prestashop:
         condition: service_healthy
-      selenoid:
+      router:
         condition: service_started
     networks:
       - prestashop_network
-    command: homework/homework_10/tests/ -m homework_10 --base-url http://prestashop --browser chrome --browser_version 128.0 --executor selenoid
+    command: homework/homework_10/tests/ -m homework_10 --base-url http://prestashop --browser chrome --browser_version 128.0 --executor router
 
   tests_firefox:
     build: .
@@ -144,11 +172,11 @@ services:
     depends_on:
       prestashop:
         condition: service_healthy
-      selenoid:
+      router:
         condition: service_started
     networks:
       - prestashop_network
-    command: homework/homework_10/tests/ -m homework_10 --base-url http://prestashop --browser firefox --browser_version 125.0 --executor selenoid
+    command: homework/homework_10/tests/ -m homework_10 --base-url http://prestashop --browser firefox --browser_version 125.0 --executor router
 
 volumes:
   db_data:

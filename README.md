@@ -14,7 +14,7 @@
 * `homework/homework_08/` — **ДЗ №8**: [Логирование и отчетность](https://github.com/OtusTeam/QA-Python/blob/master/reporting/hw.md).
 * `Dockerfile` — **ДЗ №9**: [Написать Dockerfile для своего проекта](https://github.com/OtusTeam/QA-Python/blob/master/docker/hw.md).
 * `homework/homework_10/` + `browsers.json` + `docker-compose-selenoid.yaml` — **ДЗ №10**: [Написать docker-compose.yml файл для своего проекта](https://github.com/OtusTeam/QA-Python/blob/master/docker-compose/hw.md).
-* `browsers.json` + `docker-compose-selenoid.yaml` — **ДЗ №11**: [Selenoid](https://github.com/OtusTeam/QA-Python/blob/master/selenoid/hw.md).
+* `quota/test.xml` + `browsers.json` + `docker-compose-selenoid.yaml` + `nginx.conf` — **ДЗ №11**: [Selenoid](https://github.com/OtusTeam/QA-Python/blob/master/selenoid/hw.md).
 
 ## Инфраструктура PrestaShop (http://localhost:8081/) — ДЗ №6-9
 
