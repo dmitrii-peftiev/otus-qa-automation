@@ -7,5 +7,14 @@
                 "path": "/"
             }
         }
+    },
+    "firefox": {
+        "versions": {
+            "125.0": {
+                "image": "selenoid/firefox:125.0",
+                "port": "4444",
+                "path": "/wd/hub"
+            }
+        }
     }
 }
