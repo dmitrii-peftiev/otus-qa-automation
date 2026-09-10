@@ -28,6 +28,7 @@ pipeline {
                     --base-url=${params.BASE_URL} \
                     --browser=${params.BROWSER} \
                     --browser_version=${params.BROWSER_VERSION} \
+                    -n ${params.THREADS} \
                     --alluredir=allure-results
                 """
             }
