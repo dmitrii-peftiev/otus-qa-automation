@@ -88,3 +88,42 @@ docker compose -f docker-compose-selenoid.yaml down -v
 ```shell
 docker system prune -a --volumes -f
 ```
+
+## Запуск автотестов через Jenkins — ДЗ №12
+
+### Подготовка инфраструктуры
+
+```shell
+docker run -d --name jenkins -p 8088:8080 -p 50000:50000 --restart=on-failure -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock --user root jenkins/jenkins:lts
+```
+
+```shell
+docker exec -u root jenkins sh -c "apt-get update && apt-get install -y docker.io && apt-get clean"
+```
+
+```shell
+docker network connect selenoid jenkins
+```
+
+### Первоначальная настройка (http://localhost:8088)
+
+```shell
+docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+```
+
+* Установить `Allure Jenkins plugin`.
+* В Tools добавить Allure с именем: `allure`.
+
+### Очистка Jenkins
+
+```shell
+docker stop jenkins
+```
+
+```shell
+docker rm -f jenkins
+```
+
+```shell
+docker volume rm jenkins_home
+```
