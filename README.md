@@ -4,110 +4,130 @@
 
 ## Структура проекта
 
-* `homework/homework_01/` — **ДЗ №1**: [Устранить ошибки в скрипте с помощью линтеров](https://github.com/OtusTeam/QA-Python/blob/master/linter/hw.md).
-* `homework/homework_02/` — **ДЗ №2**: [ООП на практике](https://github.com/OtusTeam/QA-Python/blob/master/oop/hw.md).
-* `homework/homework_03/` — **ДЗ №3**: [Покрыть тестами код из ДЗ "ООП на практике"](https://github.com/OtusTeam/QA-Python/blob/master/pytest/hw.md).
-* `homework/homework_04/` — **ДЗ №4**: [Работа с тестовыми данными](https://github.com/OtusTeam/QA-Python/blob/master/test-data/hw.md).
-* `homework/homework_05/` — **ДЗ №5**: [Тестирование API](https://github.com/OtusTeam/QA-Python/blob/master/api/hw.md).
-* `homework/homework_06/` + `docker-compose.yaml` — **ДЗ №6**: [Написание простых автотестов и основы Selenium](https://github.com/OtusTeam/QA-Python/blob/master/selenium/hw.md).
-* `homework/homework_07/` — **ДЗ №7**: [PageObject](https://github.com/OtusTeam/QA-Python/blob/master/pageobject/hw.md).
-* `homework/homework_08/` — **ДЗ №8**: [Логирование и отчетность](https://github.com/OtusTeam/QA-Python/blob/master/reporting/hw.md).
-* `Dockerfile` — **ДЗ №9**: [Написать Dockerfile для своего проекта](https://github.com/OtusTeam/QA-Python/blob/master/docker/hw.md).
-* `homework/homework_10/` + `browsers.json` + `docker-compose-selenoid.yaml` — **ДЗ №10**: [Написать docker-compose.yml файл для своего проекта](https://github.com/OtusTeam/QA-Python/blob/master/docker-compose/hw.md).
-* `quota/test.xml` + `browsers.json` + `docker-compose-selenoid.yaml` + `nginx.conf` — **ДЗ №11**: [Selenoid](https://github.com/OtusTeam/QA-Python/blob/master/selenoid/hw.md).
-* `Jenkinsfile` — **ДЗ №12**: [Запуск автотестов с использованием Jenkins](https://github.com/OtusTeam/QA-Python/blob/master/jenkins/hw.md).
+| ДЗ № | Путь к директории / файлу                                                                                                                                                          | Техническое задание                                                                                                           |
+|:----:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------|
+|  1   | **[`homework/homework_01/`](./homework/homework_01/)**                                                                                                                             | [Устранить ошибки в скрипте с помощью линтеров](https://github.com/OtusTeam/QA-Python/blob/master/linter/hw.md)               |
+|  2   | **[`homework/homework_02/`](./homework/homework_02/)**                                                                                                                             | [ООП на практике](https://github.com/OtusTeam/QA-Python/blob/master/oop/hw.md)                                                |
+|  3   | **[`homework/homework_03/`](./homework/homework_03/)**                                                                                                                             | [Покрыть тестами код из ДЗ "ООП на практике"](https://github.com/OtusTeam/QA-Python/blob/master/pytest/hw.md)                 |
+|  4   | **[`homework/homework_04/`](./homework/homework_04/)**                                                                                                                             | [Работа с тестовыми данными](https://github.com/OtusTeam/QA-Python/blob/master/test-data/hw.md)                               |
+|  5   | **[`homework/homework_05/`](./homework/homework_05/)**                                                                                                                             | [Тестирование API](https://github.com/OtusTeam/QA-Python/blob/master/api/hw.md)                                               |
+|  6   | **[`homework/homework_06/`](./homework/homework_06/)**<br>[`docker-compose.yaml`](./docker-compose.yaml)                                                                           | [Написание простых автотестов и основы Selenium](https://github.com/OtusTeam/QA-Python/blob/master/selenium/hw.md)            |
+|  7   | **[`homework/homework_07/`](./homework/homework_07/)**                                                                                                                             | [PageObject](https://github.com/OtusTeam/QA-Python/blob/master/pageobject/hw.md)                                              |
+|  8   | **[`homework/homework_08/`](./homework/homework_08/)**                                                                                                                             | [Логирование и отчетность](https://github.com/OtusTeam/QA-Python/blob/master/reporting/hw.md)                                 |
+|  9   | **[`Dockerfile`](./Dockerfile)**                                                                                                                                                   | [Написать Dockerfile для своего проекта](https://github.com/OtusTeam/QA-Python/blob/master/docker/hw.md)                      |
+|  10  | **[`homework/homework_10/`](./homework/homework_10/)**<br>[`browsers.json`](./browsers.json)<br>[`docker-compose-selenoid.yaml`](./docker-compose-selenoid.yaml)                   | [Написать docker-compose.yml файл для своего проекта](https://github.com/OtusTeam/QA-Python/blob/master/docker-compose/hw.md) |
+|  11  | **[`quota/test.xml`](./quota/test.xml)**<br>[`browsers.json`](./browsers.json)<br>[`docker-compose-selenoid.yaml`](./docker-compose-selenoid.yaml)<br>[`nginx.conf`](./nginx.conf) | [Selenoid](https://github.com/OtusTeam/QA-Python/blob/master/selenoid/hw.md)                                                  |
+|  12  | **[`Jenkinsfile`](./Jenkinsfile)**                                                                                                                                                 | [Запуск автотестов с использованием Jenkins](https://github.com/OtusTeam/QA-Python/blob/master/jenkins/hw.md)                 |
 
-## Инфраструктура PrestaShop (http://localhost:8081/) — ДЗ №6-9
+## Инструкции по развертыванию и запуску
 
-```shell
+<details>
+<summary><b>Инфраструктура PrestaShop (ДЗ №6-9)</b></summary>
+
+### Развертывание локального стенда
+
+```bash
 docker compose up -d
 ```
 
-```shell
+```bash
 docker compose down -v
 ```
 
-## Тесты в контейнере
+### Запуск автотестов в контейнере
 
-```shell
+```bash
 docker build -t tests .
 ```
 
-```shell
+```bash
 docker run -it tests [путь к папке ДЗ] [параметры pytest]
 ```
 
-## Мониторинг контейнеров
+### Мониторинг и очистка Docker-ресурсов
 
-```shell
+```bash
 docker ps
 ```
 
-```shell
+```bash
 docker ps -a
 ```
 
-```shell
+```bash
 docker images
 ```
 
-```shell
+```bash
 docker system prune -a
 ```
 
-## Инфраструктура PrestaShop с Selenoid — ДЗ №10-11
+</details>
 
-```shell
+<details>
+<summary><b>Инфраструктура PrestaShop с Selenoid (ДЗ №10-11)</b></summary>
+
+### Подготовка инфраструктуры Selenoid
+
+```bash
 docker network create selenoid
 ```
 
-```shell
+```bash
 docker pull selenoid/chrome:128.0
 ```
 
-```shell
+```bash
 docker pull selenoid/firefox:125.0
 ```
 
-```shell
+```bash
 docker compose -f docker-compose-selenoid.yaml up -d
 ```
 
-```shell
+### Запуск тестов в контейнерах браузеров
+
+```bash
 docker compose -f docker-compose-selenoid.yaml up --build tests_chrome
 ```
 
-```shell
+```bash
 docker compose -f docker-compose-selenoid.yaml up --build tests_firefox
 ```
 
-```shell
+### Очистка ресурсов
+
+```bash
 docker compose -f docker-compose-selenoid.yaml down -v
 ```
 
-```shell
+```bash
 docker system prune -a --volumes -f
 ```
 
-## Запуск автотестов через Jenkins — ДЗ №12
+</details>
+
+
+<details>
+<summary><b>Запуск автотестов через Jenkins (ДЗ №12)</b></summary>
 
 ### Подготовка инфраструктуры
 
-```shell
+```bash
 docker run -d --name jenkins -p 8088:8080 -p 50000:50000 --restart=on-failure -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock --user root jenkins/jenkins:lts
 ```
 
-```shell
+```bash
 docker exec -u root jenkins sh -c "apt-get update && apt-get install -y docker.io && apt-get clean"
 ```
 
-```shell
+```bash
 docker network connect selenoid jenkins
 ```
 
 ### Первоначальная настройка (http://localhost:8088)
 
-```shell
+```bash
 docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 
@@ -116,14 +136,16 @@ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
 ### Очистка Jenkins
 
-```shell
+```bash
 docker stop jenkins
 ```
 
-```shell
+```bash
 docker rm -f jenkins
 ```
 
-```shell
+```bash
 docker volume rm jenkins_home
 ```
+
+</details>
