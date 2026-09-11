@@ -22,7 +22,7 @@
 ## Инструкции по развертыванию и запуску
 
 <details>
-<summary><strong>Инфраструктура PrestaShop (ДЗ №6-9)</strong></summary>
+<summary><strong>Инфраструктура PrestaShop <code>ДЗ №6-9</code></strong></summary>
 
 ### Развертывание локального стенда
 
@@ -61,11 +61,11 @@ docker images
 ```bash
 docker system prune -a
 ```
-
+---
 </details>
 
 <details>
-<summary><strong>Инфраструктура PrestaShop с Selenoid (ДЗ №10-11)</strong></summary>
+<summary><strong>Инфраструктура PrestaShop с Selenoid <code>ДЗ №10-11</code></strong></summary>
 
 ### Подготовка инфраструктуры Selenoid
 
@@ -104,12 +104,12 @@ docker compose -f docker-compose-selenoid.yaml down -v
 ```bash
 docker system prune -a --volumes -f
 ```
-
+---
 </details>
 
 
 <details>
-<summary><strong>Запуск автотестов через Jenkins (ДЗ №12)</strong></summary>
+<summary><strong>Запуск автотестов через Jenkins <code>ДЗ №12</code></strong></summary>
 
 ### Подготовка инфраструктуры
 
