@@ -22,7 +22,7 @@
 ## Инструкции по развертыванию и запуску
 
 <details>
-<summary><b>Инфраструктура PrestaShop (ДЗ №6-9)</b></summary>
+<summary><strong>Инфраструктура PrestaShop (ДЗ №6-9)</strong></summary>
 
 ### Развертывание локального стенда
 
@@ -65,7 +65,7 @@ docker system prune -a
 </details>
 
 <details>
-<summary><b>Инфраструктура PrestaShop с Selenoid (ДЗ №10-11)</b></summary>
+<summary><strong>Инфраструктура PrestaShop с Selenoid (ДЗ №10-11)</strong></summary>
 
 ### Подготовка инфраструктуры Selenoid
 
@@ -109,7 +109,7 @@ docker system prune -a --volumes -f
 
 
 <details>
-<summary><b>Запуск автотестов через Jenkins (ДЗ №12)</b></summary>
+<summary><strong>Запуск автотестов через Jenkins (ДЗ №12)</strong></summary>
 
 ### Подготовка инфраструктуры
 
