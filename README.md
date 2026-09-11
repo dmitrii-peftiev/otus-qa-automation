@@ -24,7 +24,7 @@
 <details>
 <summary><strong>Инфраструктура PrestaShop <code>ДЗ №6-9</code></strong></summary>
 
-### Развертывание локального стенда
+### Развертывание локального стенда (http://localhost:8081)
 
 ```bash
 docker compose up -d
