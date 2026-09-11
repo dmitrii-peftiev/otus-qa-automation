@@ -15,6 +15,7 @@
 * `Dockerfile` — **ДЗ №9**: [Написать Dockerfile для своего проекта](https://github.com/OtusTeam/QA-Python/blob/master/docker/hw.md).
 * `homework/homework_10/` + `browsers.json` + `docker-compose-selenoid.yaml` — **ДЗ №10**: [Написать docker-compose.yml файл для своего проекта](https://github.com/OtusTeam/QA-Python/blob/master/docker-compose/hw.md).
 * `quota/test.xml` + `browsers.json` + `docker-compose-selenoid.yaml` + `nginx.conf` — **ДЗ №11**: [Selenoid](https://github.com/OtusTeam/QA-Python/blob/master/selenoid/hw.md).
+* `Jenkinsfile` — **ДЗ №12**: [Запуск автотестов с использованием Jenkins](https://github.com/OtusTeam/QA-Python/blob/master/jenkins/hw.md).
 
 ## Инфраструктура PrestaShop (http://localhost:8081/) — ДЗ №6-9
 
@@ -86,4 +87,43 @@ docker compose -f docker-compose-selenoid.yaml down -v
 
 ```shell
 docker system prune -a --volumes -f
+```
+
+## Запуск автотестов через Jenkins — ДЗ №12
+
+### Подготовка инфраструктуры
+
+```shell
+docker run -d --name jenkins -p 8088:8080 -p 50000:50000 --restart=on-failure -v jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock --user root jenkins/jenkins:lts
+```
+
+```shell
+docker exec -u root jenkins sh -c "apt-get update && apt-get install -y docker.io && apt-get clean"
+```
+
+```shell
+docker network connect selenoid jenkins
+```
+
+### Первоначальная настройка (http://localhost:8088)
+
+```shell
+docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+```
+
+* Установить `Allure Jenkins plugin`.
+* В Tools добавить Allure с именем: `allure`.
+
+### Очистка Jenkins
+
+```shell
+docker stop jenkins
+```
+
+```shell
+docker rm -f jenkins
+```
+
+```shell
+docker volume rm jenkins_home
 ```
