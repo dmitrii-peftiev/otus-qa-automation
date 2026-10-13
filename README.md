@@ -18,6 +18,7 @@
 |  10  | **[`homework/homework_10/`](./homework/homework_10/)**<br>[`browsers.json`](./browsers.json)<br>[`docker-compose-selenoid.yaml`](./docker-compose-selenoid.yaml)                   | [Написать docker-compose.yml файл для своего проекта](https://github.com/OtusTeam/QA-Python/blob/master/docker-compose/hw.md) |
 |  11  | **[`quota/test.xml`](./quota/test.xml)**<br>[`browsers.json`](./browsers.json)<br>[`docker-compose-selenoid.yaml`](./docker-compose-selenoid.yaml)<br>[`nginx.conf`](./nginx.conf) | [Selenoid](https://github.com/OtusTeam/QA-Python/blob/master/selenoid/hw.md)                                                  |
 |  12  | **[`Jenkinsfile`](./Jenkinsfile)**                                                                                                                                                 | [Запуск автотестов с использованием Jenkins](https://github.com/OtusTeam/QA-Python/blob/master/jenkins/hw.md)                 |
+|  13  | **[`homework/homework_13/`](./homework/homework_13/)**                                                                                                                             | [Автоматизация жестов и поиск элементов в Appium](https://github.com/OtusTeam/QA-Python/blob/master/mobile/hw.md)             |
 
 ## Инструкции по развертыванию и запуску
 
@@ -61,6 +62,7 @@ docker images
 ```bash
 docker system prune -a
 ```
+
 ---
 </details>
 
@@ -104,6 +106,7 @@ docker compose -f docker-compose-selenoid.yaml down -v
 ```bash
 docker system prune -a --volumes -f
 ```
+
 ---
 </details>
 
@@ -146,6 +149,43 @@ docker rm -f jenkins
 
 ```bash
 docker volume rm jenkins_home
+```
+
+---
+</details>
+
+
+<details>
+<summary><strong>Автоматизация жестов и поиск элементов в Appium <code>ДЗ №13</code></strong></summary>
+
+### Подготовка инфраструктуры
+
+* Установить `Node.js`.
+* Распаковать `Android SDK Platform-Tools` в `C:\android-sdk\platform-tools`.
+* Добавить в переменные среды пользователя:
+    * `ANDROID_HOME` = `C:\android-sdk`
+    * В `Path` добавить `C:\android-sdk\platform-tools`
+
+* Установить `Appium` и драйвер:
+
+```bash
+npm install -g appium
+```
+
+```bash
+appium driver install uiautomator2
+```
+
+* Подключить устройство на `Android` и включить отладку по USB.
+
+### Запуск автотестов
+
+```bash
+appium
+```
+
+```bash
+pytest homework/homework_13/tests/ -m homework_13
 ```
 
 </details>
