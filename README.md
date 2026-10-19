@@ -19,6 +19,7 @@
 |  11  | **[`quota/test.xml`](./quota/test.xml)**<br>[`browsers.json`](./browsers.json)<br>[`docker-compose-selenoid.yaml`](./docker-compose-selenoid.yaml)<br>[`nginx.conf`](./nginx.conf) | [Selenoid](https://github.com/OtusTeam/QA-Python/blob/master/selenoid/hw.md)                                                  |
 |  12  | **[`Jenkinsfile`](./Jenkinsfile)**                                                                                                                                                 | [Запуск автотестов с использованием Jenkins](https://github.com/OtusTeam/QA-Python/blob/master/jenkins/hw.md)                 |
 |  13  | **[`homework/homework_13/`](./homework/homework_13/)**                                                                                                                             | [Автоматизация жестов и поиск элементов в Appium](https://github.com/OtusTeam/QA-Python/blob/master/mobile/hw.md)             |
+|  14  | **[`homework/homework_14/`](./homework/homework_14/)**                                                                                                                             | [Работа с ОС Linux с помощью Python](https://github.com/OtusTeam/QA-Python/blob/master/linux/hw.md)                           |
 |  15  | **[`homework/homework_15/`](./homework/homework_15/)**                                                                                                                             | [Анализ лога веб-сервера](https://github.com/OtusTeam/QA-Python/blob/master/log/hw.md)                                        |
 
 ## Инструкции по развертыванию и запуску
@@ -187,6 +188,42 @@ appium
 
 ```bash
 pytest homework/homework_13/tests/ -m homework_13
+```
+
+---
+</details>
+
+<details>
+<summary><strong>Парсер процессов Linux <code>ДЗ №14</code></strong></summary>
+
+### Подготовка инфраструктуры
+
+```bash
+docker run -it -v "${PWD}:/app" -w /app/homework/homework_14 --name process-checker ubuntu:latest
+```
+
+```bash
+apt-get update
+```
+
+```bash
+apt-get install -y procps python3
+```
+
+### Запуск парсера процессов
+
+```bash
+python3 process_parser.py
+```
+
+### Очистка ресурсов
+
+```bash
+exit
+```
+
+```bash
+docker rm process-checker
 ```
 
 ---
