@@ -75,7 +75,7 @@ def main():
 
     print(report)
 
-    now = datetime.datetime.now(datetime.timezone.utc)
+    now = datetime.datetime.now(datetime.UTC)
     filename = now.strftime("%d-%m-%Y_%H-%M-scan.txt")
 
     with open(filename, "w", encoding="utf-8") as f:
