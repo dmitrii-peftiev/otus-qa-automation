@@ -104,7 +104,7 @@ services:
       - DOCKER_API_VERSION=1.40
     volumes:
       - "//var/run/docker.sock:/var/run/docker.sock"
-      - "./browsers.json:/etc/selenoid/browsers.json:ro"
+      - "./config/browsers.json:/etc/selenoid/browsers.json:ro"
     networks:
       - prestashop_network
     command: -container-network=selenoid
@@ -145,7 +145,7 @@ services:
     ports:
       - "4444:4444"
     volumes:
-      - "./nginx.conf:/etc/nginx/nginx.conf:ro"
+      - "./config/nginx.conf:/etc/nginx/nginx.conf:ro"
     networks:
       prestashop_network:
         aliases:
