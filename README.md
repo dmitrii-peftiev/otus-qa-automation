@@ -15,8 +15,8 @@
 |  7   | **[`homework/homework_07/`](./homework/homework_07/)**                                                                                                                             | [PageObject](https://github.com/OtusTeam/QA-Python/blob/master/pageobject/hw.md)                                              |
 |  8   | **[`homework/homework_08/`](./homework/homework_08/)**                                                                                                                             | [Логирование и отчетность](https://github.com/OtusTeam/QA-Python/blob/master/reporting/hw.md)                                 |
 |  9   | **[`Dockerfile`](./Dockerfile)**                                                                                                                                                   | [Написать Dockerfile для своего проекта](https://github.com/OtusTeam/QA-Python/blob/master/docker/hw.md)                      |
-|  10  | **[`homework/homework_10/`](./homework/homework_10/)**<br>[`browsers.json`](./browsers.json)<br>[`docker-compose-selenoid.yaml`](./docker-compose-selenoid.yaml)                   | [Написать docker-compose.yml файл для своего проекта](https://github.com/OtusTeam/QA-Python/blob/master/docker-compose/hw.md) |
-|  11  | **[`quota/test.xml`](./quota/test.xml)**<br>[`browsers.json`](./browsers.json)<br>[`docker-compose-selenoid.yaml`](./docker-compose-selenoid.yaml)<br>[`nginx.conf`](./nginx.conf) | [Selenoid](https://github.com/OtusTeam/QA-Python/blob/master/selenoid/hw.md)                                                  |
+|  10  | **[`homework/homework_10/`](./homework/homework_10/)**<br>[`config/browsers.json`](config/browsers.json)<br>[`docker-compose-selenoid.yaml`](./docker-compose-selenoid.yaml)                   | [Написать docker-compose.yml файл для своего проекта](https://github.com/OtusTeam/QA-Python/blob/master/docker-compose/hw.md) |
+|  11  | **[`quota/test.xml`](./quota/test.xml)**<br>[`config/browsers.json`](config/browsers.json)<br>[`docker-compose-selenoid.yaml`](./docker-compose-selenoid.yaml)<br>[`config/nginx.conf`](config/nginx.conf) | [Selenoid](https://github.com/OtusTeam/QA-Python/blob/master/selenoid/hw.md)                                                  |
 |  12  | **[`Jenkinsfile`](./Jenkinsfile)**                                                                                                                                                 | [Запуск автотестов с использованием Jenkins](https://github.com/OtusTeam/QA-Python/blob/master/jenkins/hw.md)                 |
 |  13  | **[`homework/homework_13/`](./homework/homework_13/)**                                                                                                                             | [Автоматизация жестов и поиск элементов в Appium](https://github.com/OtusTeam/QA-Python/blob/master/mobile/hw.md)             |
 |  14  | **[`homework/homework_14/`](./homework/homework_14/)**                                                                                                                             | [Работа с ОС Linux с помощью Python](https://github.com/OtusTeam/QA-Python/blob/master/linux/hw.md)                           |
@@ -25,6 +25,53 @@
 |  17  | **[`homework/homework_17/`](./homework/homework_17/)**                                                                                                                             | [Работа с БД](https://github.com/OtusTeam/QA-Python/blob/master/db/hw.md)                                                     |
 
 ## Инструкции по развертыванию и запуску
+
+<details>
+<summary><strong>Запуск базовых тестов и скриптов <code>ДЗ №1-5</code></strong></summary>
+
+### ДЗ №1: Статический анализ и форматирование кода Ruff
+
+```bash
+ruff format .
+```
+
+```bash
+ruff check .
+```
+
+### ДЗ №2: Классы объектно-ориентированного программирования
+
+Базовые классы геометрических фигур ([`Circle`](./homework/homework_02/src/circle.py), [
+`Triangle`](./homework/homework_02/src/triangle.py), [`Rectangle`](./homework/homework_02/src/rectangle.py), [
+`Square`](./homework/homework_02/src/square.py)) не содержат исполняемой логики и проверяются посредством запуска
+автотестов в ДЗ №3.
+
+### ДЗ №3: Юнит-тесты геометрических фигур Pytest
+
+```bash
+pytest homework/homework_03/tests/ -m homework_03
+```
+
+### ДЗ №4: Скрипт распределения тестовых данных JSON и CSV
+
+```bash
+python homework/homework_04/src/json_utils.py
+```
+
+### ДЗ №5: Тесты REST API и параметров командной строки
+
+```bash
+pytest homework/homework_05/tests/ -m homework_05_all
+```
+
+```bash
+pytest homework/homework_05/tests/ -m homework_05_options --url=https://google.com --status_code=200
+```
+
+---
+</details>
+
+
 
 <details>
 <summary><strong>Инфраструктура PrestaShop <code>ДЗ №6-9</code></strong></summary>
