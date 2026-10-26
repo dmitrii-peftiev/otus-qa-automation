@@ -21,6 +21,7 @@
 |  13  | **[`homework/homework_13/`](./homework/homework_13/)**                                                                                                                             | [Автоматизация жестов и поиск элементов в Appium](https://github.com/OtusTeam/QA-Python/blob/master/mobile/hw.md)             |
 |  14  | **[`homework/homework_14/`](./homework/homework_14/)**                                                                                                                             | [Работа с ОС Linux с помощью Python](https://github.com/OtusTeam/QA-Python/blob/master/linux/hw.md)                           |
 |  15  | **[`homework/homework_15/`](./homework/homework_15/)**                                                                                                                             | [Анализ лога веб-сервера](https://github.com/OtusTeam/QA-Python/blob/master/log/hw.md)                                        |
+|  16  | **[`homework/homework_16/`](./homework/homework_16/)**                                                                                                                             | [Echo сервер](https://github.com/OtusTeam/QA-Python/blob/master/socket/hw.md)                                                 |
 |  17  | **[`homework/homework_17/`](./homework/homework_17/)**                                                                                                                             | [Работа с БД](https://github.com/OtusTeam/QA-Python/blob/master/db/hw.md)                                                     |
 
 ## Инструкции по развертыванию и запуску
@@ -261,6 +262,24 @@ exit
 
 ```bash
 docker rm log-analyzer
+```
+
+---
+</details>
+
+<details>
+<summary><strong>Echo сервер <code>ДЗ №16</code></strong></summary>
+
+### Запуск сервера
+
+```bash
+python homework/homework_16/echo_server.py
+```
+
+### Запуск автотестов
+
+```bash
+pytest homework/homework_16/tests/test_echo_server.py
 ```
 
 ---
