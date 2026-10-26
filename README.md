@@ -22,6 +22,7 @@
 |  14  | **[`homework/homework_14/`](./homework/homework_14/)**                                                                                                                             | [Работа с ОС Linux с помощью Python](https://github.com/OtusTeam/QA-Python/blob/master/linux/hw.md)                           |
 |  15  | **[`homework/homework_15/`](./homework/homework_15/)**                                                                                                                             | [Анализ лога веб-сервера](https://github.com/OtusTeam/QA-Python/blob/master/log/hw.md)                                        |
 |  16  | **[`homework/homework_16/`](./homework/homework_16/)**                                                                                                                             | [Echo сервер](https://github.com/OtusTeam/QA-Python/blob/master/socket/hw.md)                                                 |
+|  17  | **[`homework/homework_17/`](./homework/homework_17/)**                                                                                                                             | [Работа с БД](https://github.com/OtusTeam/QA-Python/blob/master/db/hw.md)                                                     |
 
 ## Инструкции по развертыванию и запуску
 
@@ -279,6 +280,31 @@ python homework/homework_16/echo_server.py
 
 ```bash
 pytest homework/homework_16/tests/test_echo_server.py
+```
+
+---
+</details>
+
+
+<details>
+<summary><strong>Работа с БД <code>ДЗ №17</code></strong></summary>
+
+### Развертывание локального стенда (http://localhost:8888)
+
+```bash
+docker compose up -d
+```
+
+### Запуск автотестов
+
+```bash
+pytest homework/homework_17/tests/ -m homework_17 --host=127.0.0.1 --port=3306 --database=prestashop --user=root --password=admin
+```
+
+### Очистка ресурсов
+
+```bash
+docker compose down -v
 ```
 
 </details>
